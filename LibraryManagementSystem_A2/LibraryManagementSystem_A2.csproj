@@ -215,6 +215,13 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\Aiw.png" />
+    <Content Include="Content\Images\default.png" />
+    <Content Include="Content\Images\Dracula.png" />
+    <Content Include="Content\Images\Frankenstein.png" />
+    <Content Include="Content\Images\Pap.png" />
+    <Content Include="Content\Images\Sherlock.png" />
+    <Content Include="Content\Images\Tom.png" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />

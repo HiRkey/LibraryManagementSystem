@@ -19,6 +19,8 @@ namespace LibraryManagementSystem_A2.Models
 
         public virtual string ImageUrl { get; set; }
 
+        public virtual string Photo { get { return ImageUrl == null ? "~/Content/Images/default.png" : ImageUrl; } }
+
         public virtual LibraryBranch Location { get; set; }
     }
 }
