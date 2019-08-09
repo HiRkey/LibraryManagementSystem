@@ -44,7 +44,7 @@
             @Html.DisplayFor(modelItem => item.Author)
         </td>
         <td>
-            <img src="@Url.Content(item.ImageUrl)" width="80" height="120" display="none" />
+            <img src="@Url.Content(item.Photo)" width="80" height="120" display="none" />
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.BookId }) |
