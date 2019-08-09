@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManagementSystem_A2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,29 @@ namespace LibraryManagementSystem_A2.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index()
         {
             return View();
         }
+
+        public ActionResult BookSearch(string q)
+        {
+            var books = GetBook(q);
+            return PartialView(books);
+        }
+
+        public ActionResult QuickSearch(string term)
+        {
+            var cars = GetBook(term).Select(a => new { value = a.Title });
+            return Json(cars, JsonRequestBehavior.AllowGet);
+        }
+
+        private List<Book> GetBook(string searchString)
+        {
+            return db.Books.Where(a => a.Title.Contains(searchString)).ToList();
+        }
+
 
         public ActionResult About()
         {

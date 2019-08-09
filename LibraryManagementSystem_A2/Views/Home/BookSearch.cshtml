@@ -1,0 +1,35 @@
+﻿@model IEnumerable<LibraryManagementSystem_A2.Models.Book>
+
+@{
+    ViewBag.Title = "Search Results";
+}
+
+<h2>BookSearch</h2>
+
+
+<table class="table">
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Isbn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Author)
+        </td>
+        <td>
+            <img src="@Url.Content(item.Photo)" width="80" height="120" display="none" />
+        </td>
+        @*<td>
+            @Html.ActionLink("Details", "Details", new { id=item.BookId })
+        </td>*@
+    </tr>
+}
+
+</table>
