@@ -174,13 +174,21 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BooksController.cs" />
+    <Compile Include="Controllers\CheckoutsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LibraryBranchesController.cs" />
+    <Compile Include="Controllers\LibraryCardsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\Checkout.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LibraryBranch.cs" />
+    <Compile Include="Models\LibraryCard.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -241,6 +249,26 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Books\Create.cshtml" />
+    <Content Include="Views\Books\Delete.cshtml" />
+    <Content Include="Views\Books\Details.cshtml" />
+    <Content Include="Views\Books\Edit.cshtml" />
+    <Content Include="Views\Books\Index.cshtml" />
+    <Content Include="Views\LibraryBranches\Create.cshtml" />
+    <Content Include="Views\LibraryBranches\Delete.cshtml" />
+    <Content Include="Views\LibraryBranches\Details.cshtml" />
+    <Content Include="Views\LibraryBranches\Edit.cshtml" />
+    <Content Include="Views\LibraryBranches\Index.cshtml" />
+    <Content Include="Views\LibraryCards\Create.cshtml" />
+    <Content Include="Views\LibraryCards\Delete.cshtml" />
+    <Content Include="Views\LibraryCards\Details.cshtml" />
+    <Content Include="Views\LibraryCards\Edit.cshtml" />
+    <Content Include="Views\LibraryCards\Index.cshtml" />
+    <Content Include="Views\Checkouts\Create.cshtml" />
+    <Content Include="Views\Checkouts\Delete.cshtml" />
+    <Content Include="Views\Checkouts\Details.cshtml" />
+    <Content Include="Views\Checkouts\Edit.cshtml" />
+    <Content Include="Views\Checkouts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

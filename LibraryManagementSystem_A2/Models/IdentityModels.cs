@@ -29,5 +29,13 @@ namespace LibraryManagementSystem_A2.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<LibraryManagementSystem_A2.Models.Book> Books { get; set; }
+
+        public System.Data.Entity.DbSet<LibraryManagementSystem_A2.Models.LibraryBranch> LibraryBranches { get; set; }
+
+        public System.Data.Entity.DbSet<LibraryManagementSystem_A2.Models.LibraryCard> LibraryCards { get; set; }
+
+        public System.Data.Entity.DbSet<LibraryManagementSystem_A2.Models.Checkout> Checkouts { get; set; }
     }
 }
