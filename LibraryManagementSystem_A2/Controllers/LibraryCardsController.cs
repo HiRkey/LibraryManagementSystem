@@ -10,6 +10,8 @@ using LibraryManagementSystem_A2.Models;
 
 namespace LibraryManagementSystem_A2.Controllers
 {
+    [Authorize(Roles = "Admin")]
+    [RequireHttps]
     public class LibraryCardsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

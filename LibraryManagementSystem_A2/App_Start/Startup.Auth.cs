@@ -58,11 +58,11 @@ namespace LibraryManagementSystem_A2
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "733339555802-j74drnl39v5s9npv3ajko5q77r3k2h9l.apps.googleusercontent.com",
+                ClientSecret = "TpaLxTrksjxrLxWI_9wSQ0U1"
+            });
         }
     }
 }

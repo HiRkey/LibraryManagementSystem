@@ -10,6 +10,8 @@ using LibraryManagementSystem_A2.Models;
 
 namespace LibraryManagementSystem_A2.Controllers
 {
+    
+    [RequireHttps]
     public class BooksController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -35,6 +37,7 @@ namespace LibraryManagementSystem_A2.Controllers
             return View(book);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Books/Create
         public ActionResult Create()
         {
@@ -45,6 +48,7 @@ namespace LibraryManagementSystem_A2.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "BookId,Isbn,Title,Year,Author,ImageUrl")] Book book)
         {
@@ -58,6 +62,7 @@ namespace LibraryManagementSystem_A2.Controllers
             return View(book);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Books/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -77,6 +82,7 @@ namespace LibraryManagementSystem_A2.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "BookId,Isbn,Title,Year,Author,ImageUrl")] Book book)
         {
@@ -89,6 +95,7 @@ namespace LibraryManagementSystem_A2.Controllers
             return View(book);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Books/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -104,6 +111,7 @@ namespace LibraryManagementSystem_A2.Controllers
             return View(book);
         }
 
+        [Authorize(Roles = "Admin")]
         // POST: Books/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
