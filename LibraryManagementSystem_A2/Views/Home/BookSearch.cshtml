@@ -26,9 +26,9 @@
         <td>
             <img src="@Url.Content(item.Photo)" width="80" height="120" display="none" />
         </td>
-        @*<td>
-            @Html.ActionLink("Details", "Details", new { id=item.BookId })
-        </td>*@
+        <td>
+            @Html.ActionLink("Details", "Details", "Books", new { id=item.BookId }, new { })
+        </td>
     </tr>
 }
 
