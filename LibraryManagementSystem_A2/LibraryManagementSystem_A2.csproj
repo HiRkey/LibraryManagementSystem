@@ -190,6 +190,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="App_Start\UnityResolver.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BookApiController.cs" />
@@ -204,7 +205,9 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\BookDAL.cs" />
     <Compile Include="Models\Checkout.cs" />
+    <Compile Include="Models\IBookDAL.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LibraryBranch.cs" />
     <Compile Include="Models\LibraryCard.cs" />

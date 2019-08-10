@@ -14,13 +14,19 @@ namespace LibraryManagementSystem_A2.Controllers
     [RequireHttps]
     public class BooksController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+
+        IBookDAL DAL;
+        public BooksController(IBookDAL DAL)
+        {
+            this.DAL = DAL;
+        }
 
         [Route("books/list")]
         // GET: Books
         public ActionResult Index()
         {
-            return View(db.Books.ToList());
+            var books = DAL.GetAllBooks();
+            return View(books.ToList());
         }
 
         [Route("books/details/{id:int=1}")]
@@ -31,7 +37,7 @@ namespace LibraryManagementSystem_A2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Book book = db.Books.Find(id);
+            Book book = DAL.FindById(id);
             if (book == null)
             {
                 return HttpNotFound();
@@ -56,8 +62,7 @@ namespace LibraryManagementSystem_A2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Books.Add(book);
-                db.SaveChanges();
+                DAL.SaveNewBook(book);
                 return RedirectToAction("Index");
             }
 
@@ -72,7 +77,7 @@ namespace LibraryManagementSystem_A2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Book book = db.Books.Find(id);
+            Book book = DAL.FindById(id);
             if (book == null)
             {
                 return HttpNotFound();
@@ -90,8 +95,7 @@ namespace LibraryManagementSystem_A2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(book).State = EntityState.Modified;
-                db.SaveChanges();
+                DAL.UpdateBook(book);
                 return RedirectToAction("Index");
             }
             return View(book);
@@ -105,7 +109,7 @@ namespace LibraryManagementSystem_A2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Book book = db.Books.Find(id);
+            Book book = DAL.FindById(id);
             if (book == null)
             {
                 return HttpNotFound();
@@ -119,9 +123,7 @@ namespace LibraryManagementSystem_A2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Book book = db.Books.Find(id);
-            db.Books.Remove(book);
-            db.SaveChanges();
+            DAL.DeleteBook(id);
             return RedirectToAction("Index");
         }
 
@@ -129,7 +131,7 @@ namespace LibraryManagementSystem_A2.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                DAL.Dispose();
             }
             base.Dispose(disposing);
         }
