@@ -9,6 +9,7 @@ using System.Web.Optimization;
 using System.Web.Http;
 using System.Web.Routing;
 
+
 namespace LibraryManagementSystem_A2
 {
     public class MvcApplication : System.Web.HttpApplication
@@ -17,11 +18,18 @@ namespace LibraryManagementSystem_A2
         {
             Database.SetInitializer(new LibraryDBInitializer());
 
+            GlobalConfiguration.Configure(WebApiConfig.Register);
             AreaRegistration.RegisterAllAreas();
             //UnityConfig.RegisterComponents();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings
+                .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            GlobalConfiguration.Configuration.Formatters
+                .Remove(GlobalConfiguration.Configuration.Formatters.XmlFormatter);
+
         }
     }
 }
