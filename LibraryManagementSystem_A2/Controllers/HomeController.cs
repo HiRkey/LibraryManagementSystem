@@ -7,9 +7,15 @@ using System.Web.Mvc;
 
 namespace LibraryManagementSystem_A2.Controllers
 {
+    [RequireHttps]
+    [Route("home/{action=index}")]
     public class HomeController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+
+        [Route("")]
+        [Route("home")]
+        [Route("home/index")]
         public ActionResult Index()
         {
             return View();

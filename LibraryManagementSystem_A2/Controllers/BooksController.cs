@@ -16,12 +16,14 @@ namespace LibraryManagementSystem_A2.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        [Route("books/list")]
         // GET: Books
         public ActionResult Index()
         {
             return View(db.Books.ToList());
         }
 
+        [Route("books/details/{id:int=1}")]
         // GET: Books/Details/5
         public ActionResult Details(int? id)
         {
