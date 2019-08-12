@@ -29,8 +29,8 @@ namespace LibraryManagementSystem_A2.Controllers
 
         public ActionResult QuickSearch(string term)
         {
-            var cars = GetBook(term).Select(a => new { value = a.Title });
-            return Json(cars, JsonRequestBehavior.AllowGet);
+            var books = GetBook(term).Select(a => new { value = a.Title });
+            return Json(books, JsonRequestBehavior.AllowGet);
         }
 
         private List<Book> GetBook(string searchString)
