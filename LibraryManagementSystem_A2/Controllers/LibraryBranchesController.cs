@@ -13,7 +13,7 @@ namespace LibraryManagementSystem_A2.Controllers
     [Authorize(Roles = "Admin")]
     [RequireHttps]
     [Route("{action=index}/{id?}")]
-    [RoutePrefix("LibraryBranches")]
+    //[RoutePrefix("LibraryBranches")]
     public class LibraryBranchesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
