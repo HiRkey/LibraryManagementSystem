@@ -54,14 +54,14 @@ namespace LibraryManagementSystem_A2
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "2420672521502441",
+               appSecret: "dae42ab01372da4a9fd1c8c3d2723045");
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
-                ClientId = "733339555802-j74drnl39v5s9npv3ajko5q77r3k2h9l.apps.googleusercontent.com",
-                ClientSecret = "TpaLxTrksjxrLxWI_9wSQ0U1"
+                ClientId = "80436671507-p6t52tt93f816vokukn5396iehubcl7o.apps.googleusercontent.com",
+                ClientSecret = "H1qfgX09nl4EKmanmbR8ZJFe"
             });
         }
     }
