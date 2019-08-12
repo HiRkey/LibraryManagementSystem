@@ -4,48 +4,63 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<head>
+    <style>
+        .newbox {
+            background: rgba(255,255,255,0.6);
+        }
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CheckBook.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CheckLibrary.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Since)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Until)
-        </th>
-        <th></th>
-    </tr>
+        h2, p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body background="~/images/book.jpg" style="background-size:cover">
+    <div class="newbox">
+        <h2>Checkout Your Book</h2>
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CheckBook.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CheckLibrary.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Since)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Until)
+                </th>
+                <th></th>
+            </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CheckBook.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CheckLibrary.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Since)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Until)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CheckoutId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CheckoutId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CheckoutId })
-        </td>
-    </tr>
-}
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CheckBook.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CheckLibrary.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Since)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Until)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.CheckoutId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.CheckoutId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.CheckoutId })
+                    </td>
+                </tr>
+            }
 
-</table>
+        </table>
+        </div>
+</body>

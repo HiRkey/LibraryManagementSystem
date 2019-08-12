@@ -288,9 +288,12 @@
     <Content Include="images\book.jpg" />
     <Content Include="images\logo.jpg" />
     <Content Include="images\my.jpg" />
+    <Content Include="images\Regi.jpg" />
     <Content Include="Scripts\app\Library.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\LibraryManagementSystemA2 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\LibraryManagementSystemA2 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Custom\MaxWords.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -314,7 +317,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
